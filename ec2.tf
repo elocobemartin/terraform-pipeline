@@ -1,5 +1,5 @@
 provider "aws" {
-  region = var.region 
+  region = "us-west-1"
 }
 # EC2 instances
 resource "aws_instance" "example" {

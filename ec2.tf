@@ -3,9 +3,9 @@ provider "aws" {
 }
 # EC2 instances
 resource "aws_instance" "example" {
-  count         = var.instance_count
-  ami           = var.ami_id
-  instance_type = var.instance_type
+  count         = 3
+  ami           = "ami-020cba7c55df1f615"
+  instance_type = "t2.micro"
   tags = {
     Name = "MyEC2Instance-${count.index + 1}"
   }

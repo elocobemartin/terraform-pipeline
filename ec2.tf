@@ -2,7 +2,7 @@ provider "aws" {
   region = "us-west-1"
 }
 # EC2 instances
-resource "aws_instance" "ec2 instance" {
+resource "aws_instance" "ec2-instance" {
   count         = 3
   ami           = "ami-020cba7c55df1f615" 
   instance_type = "t2.micro"
@@ -12,5 +12,5 @@ resource "aws_instance" "ec2 instance" {
 }
 # output the public Ips of the instance
   output "instance_public_ips" {
-    value=aws_instance.example[*].public_ip
+    value=aws_instance.ec2-instance[*].public_ip
   }
